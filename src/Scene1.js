@@ -12,8 +12,8 @@ export default class Scene1 extends Phaser.Scene {
     this.background.setOrigin(0, 0);
 
     this.add.text(0, 0, 'background', {
-      font: "25px Arial",
-      fill: "yellow"
+      font: '25px Arial',
+      fill: 'yellow',
     });
   }
 }
