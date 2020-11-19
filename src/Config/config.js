@@ -3,6 +3,9 @@ import BootScene from '../Scenes/BootScene';
 import PreloaderScene from '../Scenes/PreloaderScene';
 import GameScene from '../Scenes/GameScene';
 import TitleScene from '../Scenes/TitleScene';
+import CreditsScene from '../Scenes/CreditsScene';
+import OptionsScene from '../Scenes/OptionsScene';
+
 
 export default {
   type: Phaser.AUTO,
@@ -10,5 +13,5 @@ export default {
   width: 800,
   height: 600,
   autoCenter: true,
-  scene: [BootScene, PreloaderScene, TitleScene, GameScene],
+  scene: [BootScene, PreloaderScene, TitleScene, GameScene, OptionsScene, CreditsScene],
 };
