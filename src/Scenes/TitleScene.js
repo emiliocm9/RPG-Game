@@ -1,4 +1,5 @@
 import 'phaser';
+import config from '../Config/config';
  
 export default class TitleScene extends Phaser.Scene {
   constructor () {
@@ -28,7 +29,7 @@ export default class TitleScene extends Phaser.Scene {
       gameObjects[0].setTexture('blueButton1');
     });
   }
-  
+
   centerButton (gameObject, offset = 0) {
     Phaser.Display.Align.In.Center(
       gameObject,

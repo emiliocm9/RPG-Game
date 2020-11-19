@@ -1,4 +1,8 @@
 import 'phaser';
+import blueButton1 from '../assets/ui/blue_button02.png';
+import blueButton2 from '../assets/ui/blue_button03.png';
+import checkedBox from '../assets/ui/blue_boxCheckmark.png';
+import box from '../assets/ui/grey_box.png';
  
 export default class PreloaderScene extends Phaser.Scene {
   constructor () {
@@ -75,10 +79,12 @@ export default class PreloaderScene extends Phaser.Scene {
     this.timedEvent = this.time.delayedCall(3000, this.ready, [], this);
  
     // load assets needed in our game
-    this.load.image('box', '../src/assets/ui/grey_box.png');
-    this.load.image('checkedBox', '../src/assets/ui/blue_boxCheckmark.png');
+    this.load.image('box', box);
+    this.load.image('checkedBox', checkedBox);
+    this.load.image('blueButton1', blueButton1);
+    this.load.image('blueButton2', blueButton2);
     this.load.audio('bgMusic', ['../src/assets/TownTheme.mp3']);
-    this.load.image('phaserLogo', '../src/assets/logo.png');
+    this.load.image('phaserLogo', '../src/assets/Hyperflix_Logo.png');
   }
  
   create () {
@@ -89,6 +95,7 @@ export default class PreloaderScene extends Phaser.Scene {
   }
    
   ready () {
+    this.scene.start('Title');
     this.readyCount++;
     if (this.readyCount === 2) {
       this.scene.start('Title');
