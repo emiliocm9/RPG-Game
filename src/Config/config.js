@@ -12,6 +12,16 @@ export default {
   parent: 'phaser-example',
   width: 800,
   height: 600,
+  physics: {
+    default: 'arcade',
+    arcade: {
+      gravity: {
+        y: 0,
+      },
+      debug: true,
+    },
+  },
+  pixelArt: true,
   autoCenter: true,
   scene: [BootScene, PreloaderScene, TitleScene, GameScene, OptionsScene, CreditsScene],
 };
