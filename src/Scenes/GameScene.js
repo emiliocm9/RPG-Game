@@ -1,7 +1,7 @@
 import 'phaser';
 import game_background from '../assets/landscape.png';
 import zeppelin from '../assets/ui/Zeppelin.png';
-import mountain from '../assets/ui/mountain.png';
+import mountain from '../assets/ui/tree.png';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -92,7 +92,7 @@ export default class GameScene extends Phaser.Scene {
           }
       }, this)
   }
-  
+
   die(){
       localStorage.setItem('bestFlappyScore', Math.max(this.score, this.topScore));
       this.scene.start('Title');
