@@ -9,7 +9,6 @@ export default class GameScene extends Phaser.Scene {
   }
 
   preload() {
-    // load images
     this.load.image('background', game_background);
     this.load.image('zeppelin', zeppelin);
     this.load.image('pipe', mountain);
@@ -17,13 +16,6 @@ export default class GameScene extends Phaser.Scene {
 
   create() {
     this.add.image(400, 300, 'background').setScrollFactor(0, 0);
-    //this.player = this.physics.add.image(50, 150, 'zeppelin').setBounce(0.8);
-    //this.player.displayWidth = 80;
-    //this.player.displayHeight = 50;
-//
-    //this.input.on('pointermove', (pointer) => {
-    //  this.player.y = pointer.y;
-    //});
     this.pipeGroup = this.physics.add.group();
     this.pipePool = [];
     for(let i = 0; i < 4; i++){
@@ -38,8 +30,8 @@ export default class GameScene extends Phaser.Scene {
     this.zeppelin.body.gravity.y = 800;
     this.input.on('pointerdown', this.flap, this);
     this.score = 0;
-    this.topScore = localStorage.getItem('bestFlappyScore') == null ? 0 : localStorage.getItem('bestFlappyScore');
-    this.scoreText = this.add.text(10, 10, '');
+    this.topScore = localStorage.getItem('bestZepScore') == null ? 0 : localStorage.getItem('bestZepScore');
+    this.scoreText = this.add.text(10, 10, '', { fontSize: '20px', fill: '#800000' });
     this.updateScore(this.score);
   }
 
@@ -50,7 +42,7 @@ export default class GameScene extends Phaser.Scene {
 
   placePipes(addScore){
       let rightmost = this.getRightmostPipe();
-      let pipeHoleHeight = Phaser.Math.Between(90, 135);
+      let pipeHoleHeight = Phaser.Math.Between(110, 135);
       let pipeHolePosition = Phaser.Math.Between(50 + pipeHoleHeight / 2, game.config.height - 50 - pipeHoleHeight / 2);
       this.pipePool[0].x = rightmost + this.pipePool[0].getBounds().width + Phaser.Math.Between(220, 280);
       this.pipePool[0].y = pipeHolePosition - pipeHoleHeight / 2;
@@ -94,7 +86,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   die(){
-      localStorage.setItem('bestFlappyScore', Math.max(this.score, this.topScore));
+      localStorage.setItem('bestZepScore', Math.max(this.score, this.topScore));
       this.scene.start('Title');
   }
 }
