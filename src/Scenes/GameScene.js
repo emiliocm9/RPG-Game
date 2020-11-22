@@ -32,10 +32,10 @@ export default class GameScene extends Phaser.Scene {
         this.placePipes(false);
     }
     this.pipeGroup.setVelocityX(-125);
-    this.bird = this.physics.add.sprite(80, game.config.height / 2, 'zeppelin');
-    this.bird.displayWidth = 80;
-    this.bird.displayHeight = 50;
-    this.bird.body.gravity.y = 800;
+    this.zeppelin = this.physics.add.sprite(80, game.config.height / 2, 'zeppelin');
+    this.zeppelin.displayWidth = 70;
+    this.zeppelin.displayHeight = 43;
+    this.zeppelin.body.gravity.y = 800;
     this.input.on('pointerdown', this.flap, this);
     this.score = 0;
     this.topScore = localStorage.getItem('bestFlappyScore') == null ? 0 : localStorage.getItem('bestFlappyScore');
@@ -50,7 +50,7 @@ export default class GameScene extends Phaser.Scene {
 
   placePipes(addScore){
       let rightmost = this.getRightmostPipe();
-      let pipeHoleHeight = Phaser.Math.Between(100, 130);
+      let pipeHoleHeight = Phaser.Math.Between(90, 135);
       let pipeHolePosition = Phaser.Math.Between(50 + pipeHoleHeight / 2, game.config.height - 50 - pipeHoleHeight / 2);
       this.pipePool[0].x = rightmost + this.pipePool[0].getBounds().width + Phaser.Math.Between(220, 280);
       this.pipePool[0].y = pipeHolePosition - pipeHoleHeight / 2;
@@ -65,7 +65,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   flap(){
-      this.bird.body.velocity.y = -300;
+      this.zeppelin.body.velocity.y = -300;
   }
 
   getRightmostPipe(){
@@ -77,10 +77,10 @@ export default class GameScene extends Phaser.Scene {
   }
 
   update(){
-      this.physics.world.collide(this.bird, this.pipeGroup, function(){
+      this.physics.world.collide(this.zeppelin, this.pipeGroup, function(){
           this.die();
       }, null, this);
-      if(this.bird.y > game.config.height || this.bird.y < 0){
+      if(this.zeppelin.y > game.config.height || this.zeppelin.y < 0){
           this.die();
       }
       this.pipeGroup.getChildren().forEach(function(pipe){
