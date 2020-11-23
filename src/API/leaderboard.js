@@ -1,7 +1,5 @@
 const fetch = require("node-fetch");
 
-const URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PSBnU6aG0QwcWXBIDrK6/scores/';
-
 const getGameId = async () => {
   const request = {
     method: 'POST',
@@ -22,7 +20,8 @@ const getGameId = async () => {
   }
 };
 
-const setScore = async (playerName, playerScore, URL) => {
+const setScore = async (playerName, playerScore) => {
+  const URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PSBnU6aG0QwcWXBIDrK6/scores/';
   const score = JSON.stringify({
     user: playerName,
     score: playerScore,
@@ -31,7 +30,6 @@ const setScore = async (playerName, playerScore, URL) => {
   const request = {
     method: 'POST',
     headers: {
-      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: score,
@@ -47,19 +45,17 @@ const setScore = async (playerName, playerScore, URL) => {
 };
 
 const getScore = async (type) => {
+  const URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PSBnU6aG0QwcWXBIDrK6/scores/';
   const request = {
     method: 'GET',
     headers: {
-      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
   };
 
   try {
-    const response = await fetch(appURL[type], request);
+    const response = await fetch(URL, request);
     const obj = await response.json();
-
-    // return 10 top scorer list
     return obj.result.sort((a, b) => b.score - a.score).slice(0, 10);
   } catch (err) {
     throw ('Something went wrong with your request - getScore:', err);
