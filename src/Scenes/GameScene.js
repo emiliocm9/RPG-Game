@@ -15,6 +15,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   create() {
+    this.playerName = this.sys.game.globals.model.playerName;
     this.add.image(400, 300, 'background').setScrollFactor(0, 0);
     this.pipeGroup = this.physics.add.group();
     this.pipePool = [];

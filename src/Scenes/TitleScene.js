@@ -20,16 +20,26 @@ export default class TitleScene extends Phaser.Scene {
     const startButton = document.createElement('button');
     startButton.id = 'PlayButton'
     startButton.textContent = 'Play game';
-    this.add.dom(config, 500, startButton);
-    this.gameButton = this.add.sprite(100, 200, 'blueButton1').setInteractive();
-    this.centerButton(this.gameButton, 1);
+    this.add.dom(config.width / 2, 200, startButton);
 
-    this.gameText = this.add.text(0, 0, 'Play', { fontSize: '32px', fill: '#fff' });
-    this.centerButtonText(this.gameText, this.gameButton);
-    
-    this.gameButton.on('pointerdown', (pointer) => {
+    startButton.addEventListener('click', () => {
+      if (inputText.value) {
+        this.userName = this.sys.game.globals.model;
+        this.userName.playerName = inputText.value;
         this.scene.start('Game');
+      }
     });
+
+
+    //this.gameButton = this.add.sprite(100, 200, 'blueButton1').setInteractive();
+    //this.centerButton(this.gameButton, 1);
+//
+    //this.gameText = this.add.text(0, 0, 'Play', { fontSize: '32px', fill: '#fff' });
+    //this.centerButtonText(this.gameText, this.gameButton);
+    //
+    //this.gameButton.on('pointerdown', (pointer) => {
+    //    this.scene.start('Game');
+    //});
 
     this.input.on('pointerover', (event, gameObjects) => {
       gameObjects[0].setTexture('blueButton2');
