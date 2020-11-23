@@ -1,6 +1,6 @@
 #Nickname {
   width: 150px;
-  height: 35px;
+  height: 25px;
   background: #222222e3;
   color: white;
   font-size: 20px;
@@ -10,4 +10,15 @@
   border-radius: 10px;
   outline: none;
   text-align: center;
+}
+
+#PlayButton {
+  background-color: green;
+  color: white;
+  width: 150px;
+  height: 35px;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  border: 1px solid white;
 }

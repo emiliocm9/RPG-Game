@@ -16,6 +16,11 @@ export default class TitleScene extends Phaser.Scene {
     this.add.dom(config.width / 2, 90, inputText);
 
     // Game
+
+    const startButton = document.createElement('button');
+    startButton.id = 'PlayButton'
+    startButton.textContent = 'Play game';
+    this.add.dom(config, 500, startButton);
     this.gameButton = this.add.sprite(100, 200, 'blueButton1').setInteractive();
     this.centerButton(this.gameButton, 1);
 
