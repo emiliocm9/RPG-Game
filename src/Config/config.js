@@ -5,6 +5,7 @@ import GameScene from '../Scenes/GameScene';
 import TitleScene from '../Scenes/TitleScene';
 import CreditsScene from '../Scenes/CreditsScene';
 import OptionsScene from '../Scenes/OptionsScene';
+import EndScene from '../Scenes/EndScene';
 
 
 export default {
@@ -26,5 +27,5 @@ export default {
   },
   pixelArt: true,
   autoCenter: true,
-  scene: [BootScene, PreloaderScene, TitleScene, GameScene, OptionsScene, CreditsScene],
+  scene: [BootScene, PreloaderScene, TitleScene, GameScene, OptionsScene, CreditsScene, EndScene],
 };

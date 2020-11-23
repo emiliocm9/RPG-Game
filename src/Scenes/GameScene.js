@@ -2,6 +2,7 @@ import 'phaser';
 import game_background from '../assets/landscape.png';
 import zeppelin from '../assets/ui/Zeppelin.png';
 import mountain from '../assets/ui/tree.png';
+import { setScore } from '../API/leaderboard';
 
 export default class GameScene extends Phaser.Scene {
   constructor() {
@@ -89,6 +90,7 @@ export default class GameScene extends Phaser.Scene {
 
   die(){
       localStorage.setItem('bestZepScore', Math.max(this.score, this.topScore));
+      setScore(this.playerName, this.score);
       this.scene.start('Title');
   }
 }
