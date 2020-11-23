@@ -21,6 +21,9 @@ export default {
       debug: true,
     },
   },
+  dom: {
+    createContainer: true,
+  },
   pixelArt: true,
   autoCenter: true,
   scene: [BootScene, PreloaderScene, TitleScene, GameScene, OptionsScene, CreditsScene],

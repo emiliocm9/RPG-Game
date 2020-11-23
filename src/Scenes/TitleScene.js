@@ -7,15 +7,23 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
+    const inputText = document.createElement('input');
+    inputText.type = 'text';
+    inputText.placeholder = 'Player name';
+    inputText.required = true;
+    inputText.autocomplete = 'off';
+    inputText.id = 'Nickname';
+    this.add.dom(config.width / 2, 90, inputText);
+
     // Game
     this.gameButton = this.add.sprite(100, 200, 'blueButton1').setInteractive();
     this.centerButton(this.gameButton, 1);
 
     this.gameText = this.add.text(0, 0, 'Play', { fontSize: '32px', fill: '#fff' });
     this.centerButtonText(this.gameText, this.gameButton);
-
+    
     this.gameButton.on('pointerdown', (pointer) => {
-      this.scene.start('Game');
+        this.scene.start('Game');
     });
 
     this.input.on('pointerover', (event, gameObjects) => {

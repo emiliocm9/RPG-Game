@@ -1,0 +1,13 @@
+#Nickname {
+  width: 150px;
+  height: 35px;
+  background: #222222e3;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+}

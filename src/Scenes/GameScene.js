@@ -28,6 +28,7 @@ export default class GameScene extends Phaser.Scene {
     this.zeppelin.displayWidth = 70;
     this.zeppelin.displayHeight = 43;
     this.zeppelin.body.gravity.y = 800;
+    this.input.keyboard.on('keydown-SPACE', this.flap, this);
     this.input.on('pointerdown', this.flap, this);
     this.score = 0;
     this.topScore = localStorage.getItem('bestZepScore') == null ? 0 : localStorage.getItem('bestZepScore');
