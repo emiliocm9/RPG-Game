@@ -18,7 +18,7 @@ export default class TitleScene extends Phaser.Scene {
     // Game
 
     const startButton = document.createElement('button');
-    startButton.id = 'PlayButton'
+    startButton.id = 'PlayButton';
     startButton.textContent = 'Play game';
     this.add.dom(config.width / 2, 200, startButton);
 
@@ -31,15 +31,15 @@ export default class TitleScene extends Phaser.Scene {
     });
 
 
-    //this.gameButton = this.add.sprite(100, 200, 'blueButton1').setInteractive();
-    //this.centerButton(this.gameButton, 1);
-//
-    //this.gameText = this.add.text(0, 0, 'Play', { fontSize: '32px', fill: '#fff' });
-    //this.centerButtonText(this.gameText, this.gameButton);
+    // this.gameButton = this.add.sprite(100, 200, 'blueButton1').setInteractive();
+    // this.centerButton(this.gameButton, 1);
     //
-    //this.gameButton.on('pointerdown', (pointer) => {
+    // this.gameText = this.add.text(0, 0, 'Play', { fontSize: '32px', fill: '#fff' });
+    // this.centerButtonText(this.gameText, this.gameButton);
+    //
+    // this.gameButton.on('pointerdown', (pointer) => {
     //    this.scene.start('Game');
-    //});
+    // });
 
     this.input.on('pointerover', (event, gameObjects) => {
       gameObjects[0].setTexture('blueButton2');
@@ -79,7 +79,7 @@ export default class TitleScene extends Phaser.Scene {
       gameObjects[0].setTexture('blueButton1');
     });
 
-    this.model = this.sys.game.globals.model;	
+    this.model = this.sys.game.globals.model;
     if (this.model.musicOn === true && this.model.bgMusicPlaying === false) {
       this.model.bgMusicPlaying = true;
       this.bgMusic = this.sound.add('bgMusic', { volume: 0.5, loop: true });

@@ -31,10 +31,10 @@ export default class OptionsScene extends Phaser.Scene {
     this.menuButton = this.add.sprite(400, 500, 'blueButton1').setInteractive();
     this.menuText = this.add.text(0, 0, 'Menu', { fontSize: '32px', fill: '#fff' });
     Phaser.Display.Align.In.Center(this.menuText, this.menuButton);
-      
-    this.menuButton.on('pointerdown', function (pointer) {
+
+    this.menuButton.on('pointerdown', (pointer) => {
       this.scene.start('Title');
-    }.bind(this));
+    });
 
     this.updateAudio();
   }
@@ -51,7 +51,7 @@ export default class OptionsScene extends Phaser.Scene {
         this.model.bgMusicPlaying = true;
       }
     }
-    
+
     if (this.model.soundOn === false) {
       this.soundButton.setTexture('box');
     } else {
