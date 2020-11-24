@@ -47,3 +47,8 @@
   display: flex;
   justify-content: space-around;
 }
+
+.info {
+  color: white;
+  text-transform: uppercase;
+}

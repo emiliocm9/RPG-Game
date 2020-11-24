@@ -11,6 +11,17 @@ export default class EndScene extends Phaser.Scene {
   }
 
   async create() {
+    const leaderText = document.createElement('h2');
+    leaderText.textContent = 'Player';
+    leaderText.className = 'info';
+    const pointsText = document.createElement('h2');
+    pointsText.textContent = 'Points';
+    pointsText.className = 'info';
+
+    this.add.dom(340, 50, leaderText);
+    this.add.dom(470, 50, pointsText);
+
+    leaderText.textContent = 'Player';
     const ScoresContainer = document.createElement('div')
     ScoresContainer.id = 'scoresContainer';
     const scores = await getScore();
@@ -22,7 +33,7 @@ export default class EndScene extends Phaser.Scene {
           <span>${element.score} pts</span>
         </div>`;
     });
-    this.add.dom(config.width / 2, 150, ScoresContainer);
+    this.add.dom(config.width / 2, 200, ScoresContainer);
 
     const PlayAgain = document.createElement('button');
     const Finish = document.createElement('button');
