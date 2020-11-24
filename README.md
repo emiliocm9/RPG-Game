@@ -13,9 +13,11 @@ You can access by clicking the following [link](https://laughing-banach-473f29.n
 
 ## Preview
 
-![IndexSS](./src/assets/End.png)
-![IndexSS](./src/assets/Init.png)
-![IndexSS](./src/assets/Title.png)
+![EndScene](./src/assets/End.PNG)
+
+![InitialScene](./src/assets/init.png)
+
+![TitleScene](./src/assets/Title.PNG)
 
 ## Technologies
 
