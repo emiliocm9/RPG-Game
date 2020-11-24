@@ -1,13 +1,10 @@
-import 'phaser';
+import Phaser from 'phaser';
 import config from '../Config/config';
 import { getScore } from '../API/leaderboard';
 
 export default class EndScene extends Phaser.Scene {
   constructor() {
     super('End');
-  }
-
-  preload() {
   }
 
   async create() {
@@ -25,7 +22,6 @@ export default class EndScene extends Phaser.Scene {
     const ScoresContainer = document.createElement('div');
     ScoresContainer.id = 'scoresContainer';
     const scores = await getScore();
-    console.log(scores);
     scores.forEach(element => {
       ScoresContainer.innerHTML += `
         <div class='score'>

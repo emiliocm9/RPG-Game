@@ -1,4 +1,4 @@
-import 'phaser';
+import Phaser from 'phaser';
 import config from '../Config/config';
 
 export default class TitleScene extends Phaser.Scene {
@@ -15,8 +15,6 @@ export default class TitleScene extends Phaser.Scene {
     inputText.id = 'Nickname';
     this.add.dom(config.width / 2, 90, inputText);
 
-    // Game
-
     const startButton = document.createElement('button');
     startButton.id = 'PlayButton';
     startButton.textContent = 'Play game';
@@ -30,17 +28,6 @@ export default class TitleScene extends Phaser.Scene {
       }
     });
 
-
-    // this.gameButton = this.add.sprite(100, 200, 'blueButton1').setInteractive();
-    // this.centerButton(this.gameButton, 1);
-    //
-    // this.gameText = this.add.text(0, 0, 'Play', { fontSize: '32px', fill: '#fff' });
-    // this.centerButtonText(this.gameText, this.gameButton);
-    //
-    // this.gameButton.on('pointerdown', (pointer) => {
-    //    this.scene.start('Game');
-    // });
-
     this.input.on('pointerover', (event, gameObjects) => {
       gameObjects[0].setTexture('blueButton2');
     });
@@ -49,25 +36,23 @@ export default class TitleScene extends Phaser.Scene {
       gameObjects[0].setTexture('blueButton1');
     });
 
-    // Options
     this.optionsButton = this.add.sprite(300, 200, 'blueButton1').setInteractive();
     this.centerButton(this.optionsButton);
 
     this.optionsText = this.add.text(0, 0, 'Options', { fontSize: '32px', fill: '#fff' });
     this.centerButtonText(this.optionsText, this.optionsButton);
 
-    this.optionsButton.on('pointerdown', (pointer) => {
+    this.optionsButton.on('pointerdown', () => {
       this.scene.start('Options');
     });
 
-    // Credits
     this.creditsButton = this.add.sprite(300, 200, 'blueButton1').setInteractive();
     this.centerButton(this.creditsButton, -1);
 
     this.creditsText = this.add.text(0, 0, 'Credits', { fontSize: '32px', fill: '#fff' });
     this.centerButtonText(this.creditsText, this.creditsButton);
 
-    this.creditsButton.on('pointerdown', (pointer) => {
+    this.creditsButton.on('pointerdown', () => {
       this.scene.start('Credits');
     });
 
@@ -89,13 +74,16 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   centerButton(gameObject, offset = 0) {
+    const dist = config.width;
     Phaser.Display.Align.In.Center(
       gameObject,
-      this.add.zone(config.width / 2, config.height / 2 - offset * 100, config.width, config.height),
+      this.add.zone(dist / 2, config.height / 2 - offset * 100, dist, config.height),
     );
   }
 
   centerButtonText(gameText, gameButton) {
+    const element = document.createElement('div');
+    this.add.dom(0, 0, element);
     Phaser.Display.Align.In.Center(
       gameText,
       gameButton,

@@ -44,7 +44,7 @@ const setScore = async (playerName, playerScore) => {
   }
 };
 
-const getScore = async (type) => {
+const getScore = async () => {
   const URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PSBnU6aG0QwcWXBIDrK6/scores/';
   const request = {
     method: 'GET',

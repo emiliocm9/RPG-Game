@@ -1,5 +1,6 @@
-import 'phaser';
-import game_background from '../assets/landscape.png';
+import Phaser from 'phaser';
+import config from '../Config/config';
+import gamebackground from '../assets/landscape.png';
 import zeppelin from '../assets/ui/Zeppelin.png';
 import mountain from '../assets/ui/tree.png';
 import { setScore } from '../API/leaderboard';
@@ -10,7 +11,7 @@ export default class GameScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image('background', game_background);
+    this.load.image('background', gamebackground);
     this.load.image('zeppelin', zeppelin);
     this.load.image('pipe', mountain);
   }
@@ -26,7 +27,7 @@ export default class GameScene extends Phaser.Scene {
       this.placePipes(false);
     }
     this.pipeGroup.setVelocityX(-125);
-    this.zeppelin = this.physics.add.sprite(80, game.config.height / 2, 'zeppelin');
+    this.zeppelin = this.physics.add.sprite(80, config.height / 2, 'zeppelin');
     this.zeppelin.displayWidth = 70;
     this.zeppelin.displayHeight = 43;
     this.zeppelin.body.gravity.y = 800;
@@ -46,8 +47,11 @@ export default class GameScene extends Phaser.Scene {
   placePipes(addScore) {
     const rightmost = this.getRightmostPipe();
     const pipeHoleHeight = Phaser.Math.Between(110, 135);
-    const pipeHolePosition = Phaser.Math.Between(50 + pipeHoleHeight / 2, game.config.height - 50 - pipeHoleHeight / 2);
-    this.pipePool[0].x = rightmost + this.pipePool[0].getBounds().width + Phaser.Math.Between(220, 280);
+    const long = config.height;
+    const space = pipeHoleHeight / 2;
+    const pipeHolePosition = Phaser.Math.Between(50 + space, long - 50 - space);
+    const pool = Phaser.Math.Between(220, 280);
+    this.pipePool[0].x = rightmost + this.pipePool[0].getBounds().width + pool;
     this.pipePool[0].y = pipeHolePosition - pipeHoleHeight / 2;
     this.pipePool[0].setOrigin(0, 1);
     this.pipePool[1].x = this.pipePool[0].x;
@@ -72,16 +76,16 @@ export default class GameScene extends Phaser.Scene {
   }
 
   update() {
-    this.physics.world.collide(this.zeppelin, this.pipeGroup, function () {
+    this.physics.world.collide(this.zeppelin, this.pipeGroup, () => {
       this.die();
     }, null, this);
-    if (this.zeppelin.y > game.config.height || this.zeppelin.y < 0) {
+    if (this.zeppelin.y > config.height || this.zeppelin.y < 0) {
       this.die();
     }
-    this.pipeGroup.getChildren().forEach(function (pipe) {
+    this.pipeGroup.getChildren().forEach((pipe) => {
       if (pipe.getBounds().right < 0) {
         this.pipePool.push(pipe);
-        if (this.pipePool.length == 2) {
+        if (this.pipePool.length === 2) {
           this.placePipes(true);
         }
       }
