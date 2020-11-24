@@ -91,6 +91,6 @@ export default class GameScene extends Phaser.Scene {
   die(){
       localStorage.setItem('bestZepScore', Math.max(this.score, this.topScore));
       setScore(this.playerName, this.score);
-      this.scene.start('Title');
+      this.scene.start('End');
   }
 }

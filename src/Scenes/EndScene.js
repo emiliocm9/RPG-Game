@@ -10,17 +10,19 @@ export default class EndScene extends Phaser.Scene {
   preload() {
   }
 
-  create() {
+  async create() {
     const ScoresContainer = document.createElement('div')
-    const scores = getScore();
+    ScoresContainer.id = 'scoresContainer';
+    const scores = await getScore();
+    console.log(scores);
     scores.forEach(element => {
       ScoresContainer.innerHTML += `
         <div class='score'>
           <span>${element.user}</span>
-          <span>${elementscore} pts</span>
+          <span>${element.score} pts</span>
         </div>`;
     });
-    this.add.dom(config.width / 2, 50, ScoresContainer);
+    this.add.dom(config.width / 2, 150, ScoresContainer);
 
     const PlayAgain = document.createElement('button');
     const Finish = document.createElement('button');
@@ -29,8 +31,8 @@ export default class EndScene extends Phaser.Scene {
     Finish.textContent = 'Finish Game';
     Finish.id = 'PlayButton';
 
-    this.add.dom(config.width / 2, config.height - 200, PlayAgain);
-    this.add.dom(config.width / 2, config.height - 100, Finish);
+    this.add.dom(config.width / 2, config.height - 250, PlayAgain);
+    this.add.dom(config.width / 2, config.height - 150, Finish);
 
     Finish.addEventListener('click', () => {
       this.scene.start('Title');

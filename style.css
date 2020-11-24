@@ -1,6 +1,6 @@
 #Nickname {
   width: 150px;
-  height: 25px;
+  height: 15px;
   background: #222222e3;
   color: white;
   font-size: 20px;
@@ -28,4 +28,22 @@
 
 #PlayButton:hover {
   background-position: right center;
+}
+
+#scoresContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
+  color: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.score {
+  width: 200px;
+  text-transform: capitalize;
+  margin: 0 10px;
+  display: flex;
+  justify-content: space-around;
 }
