@@ -26,6 +26,7 @@ export default class GameScene extends Phaser.Scene {
       this.pipePool.push(this.pipeGroup.create(0, 0, 'pipe'));
       this.placePipes(false);
     }
+
     this.pipeGroup.setVelocityX(-125);
     this.zeppelin = this.physics.add.sprite(80, config.height / 2, 'zeppelin');
     this.zeppelin.displayWidth = 70;
