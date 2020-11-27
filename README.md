@@ -11,7 +11,7 @@ The score is displayed at the top-left area of the screen. Plus, the gamer could
 This game is deployed in Netifly website.
 You can access by clicking the following [link](https://laughing-banach-473f29.netlify.app/dist/)
 
-## Preview
+## Game Design
 
 ![EndScene](./src/assets/End.PNG)
 
