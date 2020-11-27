@@ -29,9 +29,8 @@ export default class CreditsScene extends Phaser.Scene {
       ease: 'Power1',
       duration: 3000,
       delay: 1000,
-      /* eslint-disable */
       onComplete() {
-        this.destroy;
+        return this.destroy;
       },
     });
 
@@ -41,11 +40,10 @@ export default class CreditsScene extends Phaser.Scene {
       ease: 'Power1',
       duration: 8000,
       delay: 1000,
-      onComplete: function () {
-        this.madeByTween.destroy;
-      /* eslint-enable */
+      onComplete: () => {
         this.scene.start('Title');
-      }.bind(this),
+        return this.madeByTween.destroy;
+      },
     });
   }
 }

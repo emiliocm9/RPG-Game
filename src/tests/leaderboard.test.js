@@ -1,9 +1,9 @@
 import { getScore, setScore } from '../API/leaderboard';
 import '@babel/polyfill';
-const fetch = require('node-fetch');
-jest.mock('node-fetch');
 
-const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/PSBnU6aG0QwcWXBIDrK6/scores/';
+const fetch = require('node-fetch');
+
+jest.mock('node-fetch');
 const player = {
   user: 'Jane Doe',
   score: 10,
