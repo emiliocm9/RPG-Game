@@ -1,5 +1,6 @@
 import { getScore, setScore } from '../API/leaderboard';
 import '@babel/polyfill';
+
 const fetch = require('node-fetch');
 
 jest.mock('node-fetch');

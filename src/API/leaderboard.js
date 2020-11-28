@@ -1,4 +1,5 @@
 import '@babel/polyfill';
+
 const fetch = require('node-fetch');
 
 const getGameId = async () => {

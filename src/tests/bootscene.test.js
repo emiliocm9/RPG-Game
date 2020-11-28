@@ -1,12 +1,12 @@
 import BootScene from '../Scenes/BootScene';
 
 describe('BootScene class', () => {
-  let new_boot;
+  let newBoot;
   beforeEach(() => {
-    new_boot = new BootScene();
+    newBoot = new BootScene();
   });
 
   test('Check BootScene', () => {
-    expect(new_boot).toBeInstanceOf(BootScene);
+    expect(newBoot).toBeInstanceOf(BootScene);
   });
 });

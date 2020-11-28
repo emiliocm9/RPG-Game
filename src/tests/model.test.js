@@ -1,35 +1,36 @@
+/* eslint-disable no-underscore-dangle */
 import Model from '../Model';
 
 describe('Model class functionality', () => {
-  let new_model;
+  let newModel;
   beforeEach(() => {
-    new_model = new Model();
+    newModel = new Model();
   });
 
   test('Model starts with constructors', () => {
-    expect(new_model._soundOn).toBe(true);
-    expect(new_model._musicOn).toBe(true);
-    expect(new_model._bgMusicPlaying).toBe(false);
-    expect(new_model._playerName).toBe('');
+    expect(newModel._soundOn).toBe(true);
+    expect(newModel._musicOn).toBe(true);
+    expect(newModel._bgMusicPlaying).toBe(false);
+    expect(newModel._playerName).toBe('');
   });
 
   test('Turn off the music method and read', () => {
-    new_model._musicOn = false;
-    expect(new_model._musicOn).toBe(false);
+    newModel._musicOn = false;
+    expect(newModel._musicOn).toBe(false);
   });
 
   test('Turn off the sound method and read', () => {
-    new_model._soundOn = false;
-    expect(new_model._soundOn).toBe(false);
+    newModel._soundOn = false;
+    expect(newModel._soundOn).toBe(false);
   });
 
   test('Turn on the bgMusicPlaying method and read', () => {
-    new_model._bgMusicPlaying = true;
-    expect(new_model._soundOn).toBe(true);
+    newModel._bgMusicPlaying = true;
+    expect(newModel._soundOn).toBe(true);
   });
 
   test('Turn on the bgMusicPlaying method and read', () => {
-    new_model._playerName = 'Jane Dafoe';
-    expect(new_model._playerName).toBe('Jane Dafoe');
+    newModel._playerName = 'Jane Dafoe';
+    expect(newModel._playerName).toBe('Jane Dafoe');
   });
 });

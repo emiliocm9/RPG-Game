@@ -8,7 +8,6 @@ import CreditsScene from '../Scenes/CreditsScene';
 import OptionsScene from '../Scenes/OptionsScene';
 import EndScene from '../Scenes/EndScene';
 
-
 export default {
   type: Phaser.AUTO,
   parent: 'phaser-example',

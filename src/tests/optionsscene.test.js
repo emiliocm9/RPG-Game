@@ -1,12 +1,12 @@
 import OptionsScene from '../Scenes/OptionsScene';
 
 describe('Options class', () => {
-  let new_options;
+  let newOptions;
   beforeEach(() => {
-    new_options = new OptionsScene();
+    newOptions = new OptionsScene();
   });
 
   test('Check OptionsScene', () => {
-    expect(new_options).toBeInstanceOf(OptionsScene);
+    expect(newOptions).toBeInstanceOf(OptionsScene);
   });
 });
