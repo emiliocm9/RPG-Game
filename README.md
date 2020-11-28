@@ -1,55 +1,83 @@
-# Phaser 3 Webpack Project Template
+# Hyperflix - Zeppelin
 
-A Phaser 3 project template with ES6 support via [Babel 7](https://babeljs.io/) and [Webpack 4](https://webpack.js.org/)
-that includes hot-reloading for development and production-ready builds.
+This game is based on an old game named "flappy bird."
+The gamer will try to avoid all the trees as possible while driving a Zeppelin by clicking or pressing "SPACE."
+The score is displayed at the top-left area of the screen. Plus, the gamer could stop the music or view credits in the menu section of the game.
 
-Loading images via JavaScript module `import` is also supported.
+![IndexSS](./src/assets/IndexSS.png)
 
-## Requirements
+## Live Version
 
-[Node.js](https://nodejs.org) is required to install dependencies and run scripts via `npm`.
+This game is deployed in Netifly website.
+You can access by clicking the following [link](https://laughing-banach-473f29.netlify.app/dist/)
 
-## Available Commands
+## Game Design
 
-| Command | Description |
-|---------|-------------|
-| `npm install` | Install project dependencies |
-| `npm start` | Build project and open web server running project |
-| `npm run build` | Builds code bundle with production settings (minification, uglification, etc..) |
+![EndScene](./src/assets/End.PNG)
 
-## Writing Code
+![InitialScene](./src/assets/init.png)
 
-After cloning the repo, run `npm install` from your project directory. Then, you can start the local development
-server by running `npm start`.
+![TitleScene](./src/assets/Title.PNG)
+
+## Technologies
+
+- HTML
+- CSS
+- Webpack
+- Phaser-3
+- Babel
+- Javascript
+- Leaderboard API
+
+## Installation
+
+Use your terminal to run all the command lines marked below. Follow each step carefully to prevent typos.
+
+-[x] 1.- Click on the install or download button under the repository name and copy the URL by clicking on the icon.
+
+-[x] 2.- Open your terminal. To open the terminal, press Ctrl+Alt+T(Ubuntu) or if you are using Mac Command + Space and type in 'Terminal'.
+
+-[x] 3.- Navigate to the location in your computer where you want the repo to be cloned. Remeber that you have to type 'cd' first.
+
+-[x] 4.- Type git clone and paste the url you copied on step one.
+
+-[x] 5.- Install all your project dependencies. Be sure you have [Node.js](https://nodejs.org/en/) installed.
+> npm install
+
+-[x] 6.- Run your webpack server.
+> npm run start
+
+## Testing
+- Install project dependencies. Run the following command-line in your terminal
+> npm install
+
+- Run testing with following command in your terminal.
+> npm run test
+
+## Authors
+
+👤 **Emilio Contreras**
+
+- Github: [@emiliocm9](https://github.com/emiliocm9)
+- Twitter: [@emiliocm31](https://twitter.com/emiliocm31)
+- Email: [email](emilio.contreras97@gmail.com)
+- Linkedin: [@linkedin](https://www.linkedin.com/in/emiliocm31/)
+- Portfolio: [emiliocm.com](https://emiliocm9.github.io/)
+
+## 🤝 Contributing
+
+Contributions, issues and feature requests are welcome!
+
+Feel free to check the [issues page](issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Project inspired by Microverse Program.
 
 
-After starting the development server with `npm start`, you can edit any files in the `src` folder
-and webpack will automatically recompile and reload your server (available at `http://localhost:8080`
-by default).
 
-## Customizing Template
 
-### Babel
-You can write modern ES6+ JavaScript and Babel will transpile it to a version of JavaScript that you
-want your project to support. The targeted browsers are set in the `.babelrc` file and the default currently
-targets all browsers with total usage over "0.25%" but excludes IE11 and Opera Mini.
-
-  ```
-  "browsers": [
-    ">0.25%",
-    "not ie 11",
-    "not op_mini all"
-  ]
-  ```
-
-### Webpack
-If you want to customize your build, such as adding a new webpack loader or plugin (i.e. for loading CSS or fonts), you can
-modify the `webpack/base.js` file for cross-project changes, or you can modify and/or create
-new configuration files and target them in specific npm tasks inside of `package.json'.
-
-## Deploying Code
-After you run the `npm run build` command, your code will be built into a single bundle located at 
-`dist/bundle.min.js` along with any other assets you project depended. 
-
-If you put the contents of the `dist` folder in a publicly-accessible location (say something like `http://mycoolserver.com`), 
-you should be able to open `http://mycoolserver.com/index.html` and play your game.

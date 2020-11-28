@@ -14,10 +14,13 @@
     "no-shadow": "off",
     "no-param-reassign": "off",
     "eol-last": "off",
-    "arrow-parens": "off"
+    "no-plusplus": "off",
+    "arrow-parens": "off",
+    "import/no-cycle": "off"
   },
   "ignorePatterns": [
     "dist/",
-    "build/"
+    "build/",
+    "webpack/"
   ]
 }
