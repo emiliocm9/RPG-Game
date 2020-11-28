@@ -19,7 +19,7 @@ export default {
       gravity: {
         y: 0,
       },
-      debug: false,
+      debug: true,
     },
   },
   dom: {
