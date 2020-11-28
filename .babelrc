@@ -1,14 +1,30 @@
 {
   "presets": [
-    ["@babel/env", {
-      "targets": {
-        "browsers": [
-          ">0.25%",
-          "not ie 11",
-          "not op_mini all"
-        ]
+    [
+      "@babel/preset-env",
+      {
+        "modules": false
       },
-      "modules": false
-    }]
+      "jest"
+    ]
   ],
+  "plugins": [
+    "@babel/plugin-syntax-dynamic-import"
+  ],
+  "env": {
+    "test": {
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "modules": "auto"
+          },
+          "jest"
+        ]
+      ],
+      "plugins": [
+        "@babel/plugin-transform-runtime"
+      ]
+    }
+  }
 }
