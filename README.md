@@ -34,17 +34,12 @@ You can access by clicking the following [link](https://laughing-banach-473f29.n
 Use your terminal to run all the command lines marked below. Follow each step carefully to prevent typos.
 
 -[x] 1.- Click on the install or download button under the repository name and copy the URL by clicking on the icon.
-![Clone](https://github.com/emiliocm9/Expense-Tracker/blob/development/app/assets/images/first_instruction.png)
 
 -[x] 2.- Open your terminal. To open the terminal, press Ctrl+Alt+T(Ubuntu) or if you are using Mac Command + Space and type in 'Terminal'.
-![Terminal](https://github.com/emiliocm9/Expense-Tracker/blob/development/app/assets/images/terminal_open.png)
 
 -[x] 3.- Navigate to the location in your computer where you want the repo to be cloned. Remeber that you have to type 'cd' first.
-![Cd](https://github.com/emiliocm9/Expense-Tracker/blob/development/app/assets/images/cdirectorie.png)
 
 -[x] 4.- Type git clone and paste the url you copied on step one.
-
-![Clone](https://github.com/emiliocm9/Expense-Tracker/blob/development/app/assets/images/git_clone_better.png)
 
 -[x] 5.- Install all your project dependencies. Be sure you have [Node.js](https://nodejs.org/en/) installed.
 > npm install
